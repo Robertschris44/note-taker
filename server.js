@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 //creating const for passage/routes
-const passage = require('./passage');
+const routes = require('./routes');
 
 
 
@@ -16,7 +16,7 @@ app.use(express.json());
 //static middle ware so page can pickup static files like the style sheet
 app.use(express.static('public'));
 
-app.use(passage);
+app.use(routes);
 
 //always set listen on bottom 
 app.listen(PORT, () => {
